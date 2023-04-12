@@ -32,7 +32,7 @@ const App = () => {
       </div>
 
       {activeSong?.title && (
-        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup" style={{ background: 'linear-gradient(to bottom right, #000000, #808080)' }}>
+        <div className="backdrop-blur-3xl absolute h-28 bottom-0 left-0 right-0 flex animate-slideup" style={{ background: '' }}>
           <MusicPlayer />
         </div>
 
