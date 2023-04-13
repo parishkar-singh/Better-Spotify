@@ -4,16 +4,18 @@ import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 // import { useGetTopChartsQuery } from '../redux/services/shazamCoreApi';
 import data from '../database/getTopCharts.json';
 import {useDispatch,useSelector} from "react-redux";
+import { useState } from 'react';
 
 const Discover = () => {
     const dispatch=useDispatch()
     const {activeSong,isPlaying}=useSelector((state)=>state.player)
+    const {isFetching,setIsFetching}=useState(false)
 
-  const {isFetching,error}=useGetTopChartsQuery();
+  // const {isFetching,error}=useGetTopChartsQuery();
   // console.log(data);
 if(isFetching) return <Loader title={'Loading Songs....'}/>
 
-if(error) return <Error/>
+// if(error) return <Error/>
   const genreTitle = 'pop';
   return (
     <div className="flex flex-col">
